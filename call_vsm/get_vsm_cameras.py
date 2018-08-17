@@ -3,6 +3,7 @@ import json
 import urllib3
 import os
 import pickle
+import platform
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -14,8 +15,17 @@ BASE_URL_PREFIX = 'https://%s/ismserver/json'
 session = requests.session()
 VSOM_HEADER_PREFIX = 'x-ism-sid='
 GET_CAMERA_URL = '/camera/getCameras'
-VSOMS_PROPERTIES_FILE = '\\vsoms.properties'
+
+PLATFORM = platform.system()
+
+if PLATFORM.lower() == 'WINDOWS'.lower():
+    DIV = '\\'
+else:
+    DIV = '/'
+
+VSOMS_PROPERTIES_FILE = DIV + 'vsoms.properties'
 PICKLE_FILE = "cameras.pickle"
+
 
 
 def get_camera_location(camera_name):
@@ -55,6 +65,7 @@ def get_vsoms(camera_name):
 def get_locations_of_camera(cameras_from_all_vsoms, camera_name):
     cwd = os.getcwd()
     cwd = os.path.dirname(cwd)
+
     vsom_property_file_path = cwd + VSOMS_PROPERTIES_FILE
     all_vsoms = open(vsom_property_file_path, "r")
     if all_vsoms.__sizeof__() > 0:
@@ -149,7 +160,7 @@ def get_vsom_cameras(base_url, vsom_session_id):
     return cameras_dict
 
 
-print(get_camera_location("Pelco"))
+print(get_camera_location("sdfsdfsdf"))
 
 
 
