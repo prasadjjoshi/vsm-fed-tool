@@ -160,7 +160,7 @@ def get_vsom_cameras(base_url, vsom_session_id):
     return cameras_dict
 
 if __name__ == '__main__':
-    print(get_camera_location("sdfsdfsdf"))
+    print(get_camera_location("camera1"))
 
 
 
