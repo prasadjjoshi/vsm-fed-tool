@@ -13,14 +13,14 @@ HOW TO USE IT:
 - In get_camera_location.py, specify camera_name or a string which is part of camera_name 
 - In vsoms.properties, specify all the VSOMs with credentials. 
   
-  e.g. 10.194.79.230 admin abc123
+  e.g. 10.*.*.*  admin <password>
   
   Please use a new line to specify each VSOM IP & credentials
   
-  e.g. 10.194.79.230 admin abcd123
-       10.194.79.231 admin abcd123
-       10.194.79.232 admin abcd123
-       10.194.79.233 admin abcd123
+  e.g. 10.*.*.* admin <password>
+       10.*.*.* admin <password>
+       10.*.*.* admin <password>
+       10.*.*.* admin <password>
       
   Please note it will pull cameras only for those locations for which the user has rights to.
 - You can comment a line in vsoms.properties with a # 
